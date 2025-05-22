@@ -14,26 +14,26 @@ export class VagaService {
 
   //Comunição CRUD da API ( get / post/ put / delete)
 
-  //obter a lista de vagas (GET)
+  //obter a lista de vagas (get)
   getVagas(): Observable<Vaga[]> {
-    return this.http.get<Vaga[]>(this.apiUrl);
+    //conexões da informações do banco com o front
+    return this.http.get<Vaga[]>(this.apiUrl); // conexão com a API httpClient
   }
 
-  //Cadastrar
+  //Cadastrar(post)
   cadastrarVaga(vaga: Vaga): Observable<Vaga[]> {
     return this.http.post<Vaga[]>(this.apiUrl, vaga);
   }
 
-  //Atualizar
+  //Atualizar(put)
   atualizarVaga(id: any, vaga: Vaga): Observable<Vaga[]> {
     const urlAtualizar = `${this.apiUrl}/${id}`;
     return this.http.put<Vaga[]>(urlAtualizar, vaga);
   }
 
-  //Deletar
-removerVaga(id: any): Observable<Vaga[]> {
+  //Deletar(delete)
+  removerVaga(id: any): Observable<Vaga[]> {
     const urlDeletar = `${this.apiUrl}/${id}`;
     return this.http.delete<Vaga[]>(urlDeletar);
   }
-
 }
