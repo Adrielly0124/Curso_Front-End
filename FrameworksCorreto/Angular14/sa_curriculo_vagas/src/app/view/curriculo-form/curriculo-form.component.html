@@ -1,0 +1,123 @@
+<section class="formulario-curriculo">
+  <div class="cartao-curriculo p-3">
+    <h3 class="titulo-formulario mb-3">Cadastro / Edição de Currículo</h3>
+
+    <div class="campo-formulario mb-2">
+      <label>Nome</label>
+      <input type="text" class="entrada-texto" [(ngModel)]="curriculo.nome" name="nome" />
+    </div>
+
+    <div class="campo-formulario mb-2">
+      <label>Email</label>
+      <input type="email" class="entrada-texto" [(ngModel)]="curriculo.email" name="email" />
+    </div>
+
+    <div class="campo-formulario mb-2">
+      <label>Telefone</label>
+      <input type="text" class="entrada-texto" [(ngModel)]="curriculo.telefone" name="telefone" />
+    </div>
+
+    <div class="campo-formulario mb-2">
+      <label>Endereço</label>
+      <input type="text" class="entrada-texto" [(ngModel)]="curriculo.endereco" name="endereco" />
+    </div>
+
+    <div class="campo-formulario mb-2">
+      <label>Data de Nascimento</label>
+      <input type="date" class="entrada-texto" [(ngModel)]="curriculo.dataNascimento" name="dataNascimento" />
+    </div>
+
+    <div class="campo-formulario mb-2">
+      <label>Possui Dependentes</label>
+      <input type="checkbox" [(ngModel)]="curriculo.dependentes" name="dependentes" />
+    </div>
+
+    <div class="campo-formulario mb-2">
+      <label>Estado Civil</label>
+      <input type="text" class="entrada-texto" [(ngModel)]="curriculo.estadoCivil" name="estadoCivil" />
+    </div>
+
+    <div class="campo-formulario mb-2">
+      <label>Formação</label>
+      <input type="text" class="entrada-texto" [(ngModel)]="curriculo.formacao" name="formacao" />
+    </div>
+
+    <div class="campo-formulario mb-2">
+      <label>Idiomas</label>
+      <input type="text" class="entrada-texto" [(ngModel)]="curriculo.idiomas" name="idiomas" />
+    </div>
+
+    <div class="campo-formulario mb-2">
+      <label>Cursos</label>
+      <input type="text" class="entrada-texto" [(ngModel)]="curriculo.cursos" name="cursos" />
+    </div>
+
+    <div class="campo-formulario mb-2">
+      <label>Área de Interesse</label>
+      <input type="text" class="entrada-texto" [(ngModel)]="curriculo.areaInteresse" name="areaInteresse" />
+    </div>
+
+    <div class="campo-formulario mb-2">
+      <label>Objetivo</label>
+      <textarea class="entrada-textarea" [(ngModel)]="curriculo.objetivo" name="objetivo"></textarea>
+    </div>
+
+    <div class="campo-formulario mb-2">
+      <label>Habilidades</label>
+      <textarea class="entrada-textarea" [(ngModel)]="curriculo.habilidades" name="habilidades"></textarea>
+    </div>
+
+    <div class="campo-formulario mb-2">
+      <label>Disponibilidade Imediata</label>
+      <input type="checkbox" [(ngModel)]="curriculo.disponibilidade" name="disponibilidade" />
+    </div>
+
+    <div class="campo-formulario mb-2">
+      <label>Experiência Profissional</label>
+      <textarea class="entrada-textarea" [(ngModel)]="curriculo.experiencia" name="experiencia"></textarea>
+    </div>
+
+    <div class="campo-formulario mb-3">
+      <label>Foto</label>
+      <input type="file" class="entrada-arquivo" (change)="onFileChange($event)" />
+    </div>
+
+    <div class="botoes-formulario d-flex gap-2">
+      <button class="btn-cadastrar" (click)="cadastrar()">Cadastrar</button>
+      <button class="btn-atualizar" (click)="atualizar(curriculo.id)">Atualizar</button>
+      <button class="btn-excluir" (click)="excluir(curriculo.id)">Excluir</button>
+    </div>
+  </div>
+  <section class="curriculo-list">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Código do Currículo</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Telefone</th>
+          <th>Foto</th>
+        </tr>
+      </thead>
+  <tbody>
+    <tr *ngFor="let curriculo of curriculos" class="curriculo-row">
+      <td>{{ curriculo.id }}</td>
+      <td>{{ curriculo.nome }}</td>
+      <td>{{ curriculo.email }}</td>
+      <td>{{ curriculo.telefone }}</td>
+      <td>
+        <img src="assets/img/curriculos/{{ curriculo.foto }}" alt="Foto do candidato" class="foto-candidato" />
+      </td>
+      <td>
+        <button type="button" (click)="listarCurriculo()" class="btn-listar">
+          Listar
+        </button>
+
+        <button type="button" (click)="excluir(curriculo.id)" class="btn-excluir">
+          Excluir
+        </button>
+      </td>
+    </tr>
+  </tbody>
+    </table>
+</section>

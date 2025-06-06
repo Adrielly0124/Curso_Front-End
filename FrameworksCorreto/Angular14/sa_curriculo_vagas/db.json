@@ -1,18 +1,11 @@
 {
   "vagas": [
     {
-      "id": "1",
-      "nome": "Desenvolver FrontEnd Jr",
-      "foto": "foto1.png",
-      "descricao": "Trabalhar com HTML, CSS e JS",
-      "salario": 4000
-    },
-    {
       "id": "2",
       "nome": "Desenvolver BackEnd Pleno",
       "foto": "foto2.png",
       "descricao": "Trabalhar com Desenvolvimento Web",
-      "salario": 7000
+      "salario": "100"
     },
     {
       "id": "3",
@@ -22,7 +15,7 @@
       "salario": 10000
     },
     {
-      "id": 4,
+      "id": "4",
       "nome": "Gerente de Nuvem",
       "foto": "foto4.png",
       "descricao": "Vaga de Gerente de Nuvem",
@@ -37,8 +30,62 @@
     }
   ],
   "curriculos": [
-
-
-
+    {
+      "id": 0,
+      "nome": "GILBERTO QUEIROZ DE OLIVEIRA",
+      "email": "gilberto@gmail.com",
+      "telefone": "19988591032",
+      "endereco": "Rua Áureo Aparecido Marrafon, 72 - Jardim Morro Branco",
+      "dataNascimento": "",
+      "dependentes": true,
+      "estadoCivil": "Casado",
+      "formacao": "Técnico em DEV",
+      "idiomas": "Ingles e Espanhol",
+      "cursos": "Senai",
+      "areaInteresse": "FullStack",
+      "objetivo": "",
+      "habilidades": "",
+      "disponibilidade": true,
+      "experiencia": "Google",
+      "foto": ""
+    },
+    {
+      "id": 0,
+      "nome": "Adrielly Dantas De Oliveira",
+      "email": "drika.dantas24.gmail.com",
+      "telefone": "19988591032",
+      "endereco": "Rua Áureo Aparecido Marrafon, 72 - Jardim Morro Branco",
+      "dataNascimento": "2007-08-24",
+      "dependentes": false,
+      "estadoCivil": "Soleira",
+      "formacao": "Técnica em Desenvolvimento de Sistemas",
+      "idiomas": "Inglês ",
+      "cursos": "Dev Senai",
+      "areaInteresse": "FrontEnd",
+      "objetivo": "Desenvolver e criar novas aplicações referentes a essa área",
+      "habilidades": "Angular, React, JavaScript",
+      "disponibilidade": true,
+      "experiencia": "Microsoft",
+      "foto": ""
+    },
+    {
+      "id": 0,
+      "nome": "Adrielly Dantas De Oliveira",
+      "email": "drika.dantas24@gmail.com",
+      "telefone": "19988591032",
+      "endereco": "Rua Áureo Aparecido Marrafon, 72 - Jardim Morro Branco",
+      "dataNascimento": "",
+      "dependentes": false,
+      "estadoCivil": "SP",
+      "formacao": "",
+      "idiomas": "",
+      "cursos": "",
+      "areaInteresse": "",
+      "objetivo": "",
+      "habilidades": "",
+      "disponibilidade": false,
+      "experiencia": "",
+      "foto": ""
+    }
   ]
 }

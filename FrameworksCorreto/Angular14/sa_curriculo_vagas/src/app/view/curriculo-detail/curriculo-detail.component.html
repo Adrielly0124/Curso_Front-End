@@ -1,0 +1,22 @@
+<section class="curriculo-detalhes" *ngIf="curriculo">
+  <div class="card">
+    <img src="assets/img/curriculos/{{ curriculo.foto }}" alt="Foto do candidato" />
+    <div class="card-body">
+      <h2>{{ curriculo.nome }}</h2>
+      <p><strong>Email:</strong> {{ curriculo.email }}</p>
+      <p><strong>Telefone:</strong> {{ curriculo.telefone }}</p>
+      <p><strong>Endereço:</strong> {{ curriculo.endereco }}</p>
+      <p><strong>Data de Nascimento:</strong> {{ curriculo.dataNascimento }}</p>
+      <p><strong>Estado Civil:</strong> {{ curriculo.estadoCivil }}</p>
+      <p><strong>Possui Dependentes:</strong> {{ curriculo.dependentes ? 'Sim' : 'Não' }}</p>
+      <p><strong>Formação:</strong> {{ curriculo.formacao }}</p>
+      <p><strong>Idiomas:</strong> {{ curriculo.idiomas }}</p>
+      <p><strong>Cursos:</strong> {{ curriculo.cursos }}</p>
+      <p><strong>Área de Interesse:</strong> {{ curriculo.areaInteresse }}</p>
+      <p><strong>Objetivo Profissional:</strong> {{ curriculo.objetivo }}</p>
+      <p><strong>Habilidades:</strong> {{ curriculo.habilidades }}</p>
+      <p><strong>Disponibilidade:</strong> {{ curriculo.disponibilidade ? 'Sim' : 'Não' }}</p>
+      <p><strong>Experiência:</strong> {{ curriculo.experiencia }}</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,34 @@
+<section class="lista-curriculos">
+  <div *ngFor="let curriculo of curriculos">
+    <div class="card">
+      <img src="assets/img/curriculos/{{ curriculo.foto }}" alt="Foto do candidato" />
+<div class="card-body">
+  <h5 class="card-title">Currículo Nº {{ curriculo.id }}</h5>
+  <h5 class="card-title">Nome: {{ curriculo.nome }}</h5>
+
+  <hr />
+  <p class="card-text"><strong>Contato:</strong></p>
+  <p class="card-text">Email: {{ curriculo.email }}</p>
+  <p class="card-text">Telefone: {{ curriculo.telefone }}</p>
+  <p class="card-text">Endereço: {{ curriculo.endereco }}</p>
+
+  <hr />
+  <p class="card-text"><strong>Dados Pessoais:</strong></p>
+  <p class="card-text">Data de Nascimento: {{ curriculo.dataNascimento }}</p>
+  <p class="card-text">Dependentes: {{ curriculo.dependentes ? 'Sim' : 'Não' }}</p>
+  <p class="card-text">Estado Civil: {{ curriculo.estadoCivil }}</p>
+
+  <hr />
+  <p class="card-text"><strong>Formação e Qualificações:</strong></p>
+  <p class="card-text">Formação Acadêmica: {{ curriculo.formacao }}</p>
+  <p class="card-text">Idiomas: {{ curriculo.idiomas }}</p>
+  <p class="card-text">Cursos Complementares: {{ curriculo.cursos }}</p>
+
+  <hr />
+  <p class="card-text"><strong>Área de Atuação:</strong></p>
+  <p class="card-text">Área de Interesse: {{ curriculo.areaInteresse }}</p>
+  <p class="card-text">Objetivo Profissional: {{ curriculo.objetivo }}</p>
+  <p class="card-text">Habilidades Técnicas: {{ curriculo.habilidades }}</p>
+  <p class="card-text">Disponível para viajar/mudar: {{ curriculo.disponibilidade ? 'Sim' : 'Não' }}</p>
+  <p class="card-text">Experiência: {{ curriculo.experiencia }}</p>
+</div>

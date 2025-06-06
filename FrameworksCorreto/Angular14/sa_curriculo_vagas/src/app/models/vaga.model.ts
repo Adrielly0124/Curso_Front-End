@@ -45,3 +45,4 @@ export class Vaga {
     return new Vaga(map.id, map.nome, map.foto, map.descricao, map.salario);
   }
 }
+

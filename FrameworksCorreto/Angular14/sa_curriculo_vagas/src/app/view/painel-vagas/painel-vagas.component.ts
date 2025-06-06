@@ -8,8 +8,8 @@ import { VagaService } from 'src/app/service/vaga.service';
   styleUrls: ['./painel-vagas.component.scss'],
 })
 export class PainelVagasComponent implements OnInit {
-  //atributos
-  public vaga: Vaga = new Vaga(0, '', '', '', 0); //rastreas os dados do Formulário
+  //atributo 
+  public vaga: Vaga = new Vaga(0, '', '', '', 0); //rastrear os dados do Formulário
   // vetor para armazenar as info do DB
   public vagas: Vaga[] = [];
 
