@@ -8,9 +8,7 @@ import { CurriculoService } from 'src/app/service/curriculo.service';
   styleUrls: ['./curriculo-form.component.scss'],
 })
 export class CurriculoFormComponent implements OnInit {
-  // Objeto para vincular ao formulário
   public curriculo: Curriculo = {
-    id: 0,
     nome: '',
     email: '',
     telefone: '',
@@ -29,9 +27,8 @@ export class CurriculoFormComponent implements OnInit {
     foto: '',
   };
 
-  // Lista de currículos
   public curriculos: Curriculo[] = [];
-  vagas: any;
+  public imagemPreview: string | ArrayBuffer | null = null;
 
   constructor(private _curriculoService: CurriculoService) {}
 
@@ -39,60 +36,59 @@ export class CurriculoFormComponent implements OnInit {
     this.listarCurriculo();
   }
 
-  // Listar todos os currículos
   listarCurriculo() {
     this._curriculoService.listarCurriculo().subscribe((retorno) => {
       this.curriculos = retorno;
     });
   }
 
-  // Preencher o formulário com um currículo existente
   listarCurriculoUnico(curriculo: Curriculo) {
-    this.curriculo = curriculo;
+    this.curriculo = { ...curriculo };
+    this.imagemPreview = curriculo.foto
+      ? `assets/img/curriculos/${curriculo.foto}`
+      : null;
   }
 
-  // Cadastrar novo currículo
   cadastrar() {
     this._curriculoService.cadastrarCurriculo(this.curriculo).subscribe(
       () => {
         this.resetarFormulario();
+        alert('Currículo cadastrado com sucesso');
         this.listarCurriculo();
       },
-      (err: any) => {
-        console.error('Erro ao cadastrar currículo:', err);
-      }
+      (err) => alert('Erro ao cadastrar currículo:' + err)
     );
   }
 
-  // Atualizar currículo
   atualizar(id: number) {
     this._curriculoService.atualizarCurriculo(id, this.curriculo).subscribe(
-      (): void => {
-        this.resetarFormulario();
-        this.listarCurriculo();
-      },
-      (err: any): void => {
-        console.error('Erro ao atualizar currículo:', err);
-      }
-    );
-  }
-
-  // Excluir currículo
-  excluir(id: number) {
-    this._curriculoService.excluirCurriculo(id).subscribe(
       () => {
+        this.resetarFormulario();
+        alert('Currículo atualizado com sucesso');
         this.listarCurriculo();
       },
-      (err: any) => {
-        console.error('Erro ao excluir currículo:', err);
-      }
+      (err) => alert('Erro ao atualizar currículo:' + err)
     );
   }
 
-  // Resetar formulário
+  excluir(id: number) {
+    if (!id || id === 0) {
+      console.warn('ID inválido, operação cancelada.');
+      return;
+    }
+
+    this._curriculoService.removerCurriculo(id).subscribe(
+      () => {
+        this.resetarFormulario();
+        alert('Currículo excluído com sucesso');
+        this.listarCurriculo();
+      },
+      (err) => alert('Erro ao excluir currículo:'+ err)
+    );
+  }
+
   resetarFormulario() {
     this.curriculo = {
-      id: 0,
       nome: '',
       email: '',
       telefone: '',
@@ -110,13 +106,19 @@ export class CurriculoFormComponent implements OnInit {
       experiencia: '',
       foto: '',
     };
+    this.imagemPreview = null;
   }
 
-  // Manipular seleção de arquivo
   onFileChange(event: any) {
     const file = event.target.files[0];
     if (file) {
-      this.curriculo.foto = file.name; // ou use FileReader para armazenar o base64, se necessário
+      this.curriculo.foto = file.name;
+
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.imagemPreview = reader.result;
+      };
+      reader.readAsDataURL(file);
     }
   }
 }

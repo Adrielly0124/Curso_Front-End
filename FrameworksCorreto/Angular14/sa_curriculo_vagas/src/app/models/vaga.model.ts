@@ -15,11 +15,11 @@ export class Vaga {
   // }
 
   constructor(
-    public id: number,
     public nome: string,
     public foto: string,
     public descricao: string,
-    public salario: number
+    public salario: number,
+    public id?: number
   ) {}
 
   // //métodos de acesso getter and setter
@@ -42,7 +42,7 @@ export class Vaga {
   //fromMap() BD -> obj
 
   static fromMap(map: any): Vaga {
-    return new Vaga(map.id, map.nome, map.foto, map.descricao, map.salario);
+    return new Vaga(map.nome, map.foto, map.descricao, map.salario, map.id);
   }
 }
 

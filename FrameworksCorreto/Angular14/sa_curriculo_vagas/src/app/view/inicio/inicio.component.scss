@@ -1,34 +1,31 @@
+// Paleta de cores refinada
+$cor-primaria: #007bff;
+$cor-secundaria: #6c757d;
+$cor-sucesso: #28a745;
+$cor-alerta: #ffc107;
+$cor-perigo: #dc3545;
+$cor-fundo: #f0f2f5;
+$cinza-leve: #e9ecef;
+
 .container {
-  max-width: 1200px;
-  margin: 2rem auto;
+  max-width: 960px;
+  margin: 3rem auto;
   padding: 2rem;
+  text-align: center;
   background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 
   h1 {
-    color: #333;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    color: $cor-primaria;
     margin-bottom: 1rem;
-    text-align: center;
-
-    @media (max-width: 780px) {
-      font-size: 2rem;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 1.5rem;
-    }
+    font-weight: 700;
   }
 
   p {
-    color: #555;
-    font-size: 1.3rem;
-    line-height: 1.6;
-    text-align: center;
-
-    @media (max-width: 780px) {
-      font-size: 1rem;
-    }
+    font-size: 1.2rem;
+    color: $cor-secundaria;
+    font-weight: 500;
   }
 }

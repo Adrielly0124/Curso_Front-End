@@ -1,58 +1,67 @@
+// Paleta de cores refinada
+$cor-primaria: #007bff;
+$cor-secundaria: #6c757d;
+$cor-sucesso: #28a745;
+$cor-alerta: #ffc107;
+$cor-perigo: #dc3545;
+$cor-fundo: #f0f2f5;
+$cinza-leve: #e9ecef;
+
 .lista-vagas {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 2rem 1rem;
-  max-width: 1800px;
-  margin: 0 auto;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
 
-  .card {
-    margin: 5px 10px;
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    transition: transform 0.3s ease,
-    box-shadow 0.3 ease;
-    width: 18rem;
+  >div {
+    margin-bottom: 1.8rem;
 
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-    }
+    .card {
+      display: flex;
+      gap: 1.5rem;
+      background-color: $cor-fundo;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s ease;
 
-    img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-bottom: 1px solid #aaa;
-    }
-
-    .card-body {
-      padding: 1rem;
-
-      h5.card-title {
-        color: #333;
-        font-size: 1.5rem;
-        line-height: 1.5;
-        margin-bottom: 0.5rem;
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
       }
 
-      p.card-text {
-        color: #555;
-        font-size: 0.8rem;
-        line-height: 1.5;
-        margin-bottom: 0.5rem;
+      img {
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+        object-fit: cover;
+        border: 2px solid $cinza-leve;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       }
 
-      p.card-text:last-child {
-        margin-bottom: 0; //remove a margem da ultima linha
+      .card-body {
+        flex: 1;
+
+        .card-title {
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: $cor-primaria;
+          margin-bottom: 0.6rem;
+        }
+
+        .card-text {
+          font-size: 1rem;
+          color: #444;
+          margin-bottom: 0.4rem;
+        }
       }
     }
   }
-}
 
-.rodape {
-  height: 10vh;
+  .rodape {
+    height: 80px;
+  }
 }

@@ -1,68 +1,64 @@
-
+// Paleta de cores refinada
 $cor-primaria: #007bff;
 $cor-secundaria: #6c757d;
 $cor-sucesso: #28a745;
+$cor-alerta: #ffc107;
 $cor-perigo: #dc3545;
+$cor-fundo: #f0f2f5;
+$cinza-leve: #e9ecef;
 
 .lista-curriculos {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 2rem auto;
-  padding: 1rem;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 
   .card {
+    display: flex;
+    flex-direction: row;
     background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-    transition: transform 0.2s ease-in-out;
-
-    &:hover {
-      transform: translateY(-5px);
-    }
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    align-items: flex-start;
+    gap: 1.5rem;
 
     img {
-      width: 100%;
-      height: 200px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
       object-fit: cover;
-      border-bottom: 1px solid #ddd;
+      border: 3px solid $cor-primaria;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
     .card-body {
-      padding: 1rem;
+      flex: 1;
 
-      .card-title {
-        font-size: 1.1rem;
+      h5.card-title {
+        font-size: 1.25rem;
+        font-weight: bold;
         color: $cor-primaria;
         margin-bottom: 0.5rem;
       }
 
+      hr {
+        margin: 1rem 0;
+        border: none;
+        border-top: 1px solid #ddd;
+      }
+
       .card-text {
+        margin-bottom: 0.4rem;
         font-size: 0.95rem;
         color: #333;
-        margin-bottom: 0.4rem;
-        line-height: 1.4;
-      }
 
-      hr {
-        border: none;
-        border-top: 1px solid #ccc;
-        margin: 1rem 0;
-      }
-
-      strong {
-        color: $cor-secundaria;
+        strong {
+          color: $cor-secundaria;
+          font-weight: 600;
+        }
       }
     }
   }
-}
-
-// Rodapé visual
-.rodape {
-  height: 10vh;
 }

@@ -1,91 +1,58 @@
 {
   "vagas": [
     {
-      "id": "2",
-      "nome": "Desenvolver BackEnd Pleno",
-      "foto": "foto2.png",
+      "id": "f90e",
+      "nome": "Desenvolver BackEnd Pleno\t",
+      "foto": "foto2.avif",
       "descricao": "Trabalhar com Desenvolvimento Web",
-      "salario": "100"
+      "salario": "5000"
     },
     {
-      "id": "3",
-      "nome": "Desenvolver Fullstack Senior",
-      "foto": "foto3.png",
-      "descricao": "Trabalhar com Desenvolvimento Web",
-      "salario": 10000
-    },
-    {
-      "id": "4",
-      "nome": "Gerente de Nuvem",
-      "foto": "foto4.png",
-      "descricao": "Vaga de Gerente de Nuvem",
-      "salario": 8500
-    },
-    {
-      "id": "5",
-      "nome": "Desenvolvedor FrontEnd Senior",
-      "foto": "C:\\fakepath\\logotipo.png",
-      "descricao": "Criar Web App",
-      "salario": "8000"
+      "nome": "Desenvolvedor FullStack",
+      "foto": "foto1.png",
+      "descricao": "Desenvolver sites completos",
+      "salario": "10000",
+      "id": "ad37"
     }
   ],
   "curriculos": [
     {
-      "id": 0,
+      "id": "4ceb",
       "nome": "GILBERTO QUEIROZ DE OLIVEIRA",
-      "email": "gilberto@gmail.com",
+      "email": "drika.dantas24.gmail.com",
       "telefone": "19988591032",
       "endereco": "Rua Áureo Aparecido Marrafon, 72 - Jardim Morro Branco",
-      "dataNascimento": "",
-      "dependentes": true,
-      "estadoCivil": "Casado",
-      "formacao": "Técnico em DEV",
-      "idiomas": "Ingles e Espanhol",
+      "dataNascimento": "1972-03-16",
+      "dependentes": false,
+      "estadoCivil": "SP",
+      "formacao": "RH",
+      "idiomas": "Inglês",
       "cursos": "Senai",
-      "areaInteresse": "FullStack",
-      "objetivo": "",
-      "habilidades": "",
-      "disponibilidade": true,
+      "areaInteresse": "Gerencia",
+      "objetivo": "Crescimento pessoal",
+      "habilidades": "Liderança",
+      "disponibilidade": false,
       "experiencia": "Google",
-      "foto": ""
+      "foto": "foto2.webp"
     },
     {
-      "id": 0,
+      "id": "c96a",
       "nome": "Adrielly Dantas De Oliveira",
       "email": "drika.dantas24.gmail.com",
       "telefone": "19988591032",
       "endereco": "Rua Áureo Aparecido Marrafon, 72 - Jardim Morro Branco",
       "dataNascimento": "2007-08-24",
       "dependentes": false,
-      "estadoCivil": "Soleira",
-      "formacao": "Técnica em Desenvolvimento de Sistemas",
-      "idiomas": "Inglês ",
-      "cursos": "Dev Senai",
-      "areaInteresse": "FrontEnd",
-      "objetivo": "Desenvolver e criar novas aplicações referentes a essa área",
-      "habilidades": "Angular, React, JavaScript",
-      "disponibilidade": true,
-      "experiencia": "Microsoft",
-      "foto": ""
-    },
-    {
-      "id": 0,
-      "nome": "Adrielly Dantas De Oliveira",
-      "email": "drika.dantas24@gmail.com",
-      "telefone": "19988591032",
-      "endereco": "Rua Áureo Aparecido Marrafon, 72 - Jardim Morro Branco",
-      "dataNascimento": "",
-      "dependentes": false,
       "estadoCivil": "SP",
-      "formacao": "",
-      "idiomas": "",
-      "cursos": "",
-      "areaInteresse": "",
-      "objetivo": "",
-      "habilidades": "",
-      "disponibilidade": false,
+      "formacao": "Estudante",
+      "idiomas": "Inglês",
+      "cursos": "Senai",
+      "areaInteresse": "Gerencia",
+      "objetivo": "Adquirir experiência",
+      "habilidades": "Liderança",
+      "disponibilidade": true,
       "experiencia": "",
-      "foto": ""
+      "foto": "foto1.webp"
     }
   ]
 }

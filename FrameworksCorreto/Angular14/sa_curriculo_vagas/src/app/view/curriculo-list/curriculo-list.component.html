@@ -1,7 +1,7 @@
 <section class="lista-curriculos">
   <div *ngFor="let curriculo of curriculos">
     <div class="card">
-      <img src="assets/img/curriculos/{{ curriculo.foto }}" alt="Foto do candidato" />
+      <img [src]="'assets/img/curriculos/' + curriculo.foto" alt="Foto do candidato"/>
 <div class="card-body">
   <h5 class="card-title">Currículo Nº {{ curriculo.id }}</h5>
   <h5 class="card-title">Nome: {{ curriculo.nome }}</h5>

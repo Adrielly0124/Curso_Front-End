@@ -1,154 +1,165 @@
-//estilização do painel-vagas
-//declaração de variáveis em SCSS
+// Variáveis
 $cor-primaria: #007bff;
 $cor-secundaria: #6c757d;
 $cor-sucesso: #28a745;
 $cor-perigo: #dc3545;
 
-form {
-  max-width: 600px;
-  margin: 0 auto;
+.formulario-curriculo {
+  max-width: 900px;
+  margin: 2rem auto;
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #444;
-    font-size: 1rem;
-  }
+  .cartao-curriculo {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
 
-  h3{
-    font-size: 1.5rem;
-      font-weight: bold;
-      color: $cor-secundaria;
-      margin-bottom: 1.5rem;
-      text-align: center;
-  }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
 
-  input {
-    width: calc(100% - 20px);
-    padding: 1rem 10px;
-    margin-bottom: 1.5rem;
-    border: 1px solid #aaa;
-    border-radius: 5px;
-    font-size: 1rem;
-
-    &:focus {
-      outline: none;
-      border-color: $cor-primaria;
-      box-shadow: 0, 0, 0, rgba($color: $cor-primaria, $alpha: 0.25);
-    }
-  }
-
-  button {
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #ffffff;
-    margin-right: 0.75rem;
-
-    &[type="button"]:nth-of-type(1) {
-      //Botão Cadastrar
-      background-color: $cor-secundaria;
-
-      &:hover {
-        background-color: darken($color: $cor-sucesso, $amount: 10%);
+      label {
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 0.4rem;
       }
-    }
 
-    &[type="button"]:nth-of-type(2) {
-      //Botão Atualizar
-      background-color: $cor-secundaria;
+      input[type="text"],
+      input[type="file"] {
+        padding: 0.75rem;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
 
-      &:hover {
-        background-color: darken($color: #ffff00, $amount: 10%);
+        &:focus {
+          border-color: $cor-primaria;
+          outline: none;
+          box-shadow: 0 0 5px rgba($cor-primaria, 0.2);
+        }
       }
-    }
 
-    &[type="button"]:nth-of-type(3) {
-      //Botão Atualizar
-      background-color: $cor-secundaria;
+      .preview-imagem {
+        margin-top: 0.5rem;
 
-      &:hover {
-        background-color: darken($color: $cor-perigo, $amount: 10%);
+        img {
+          max-width: 150px;
+          border-radius: 8px;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 0.5rem;
+        transition: background-color 0.3s ease;
+
+        &:nth-of-type(1) {
+          background-color: $cor-sucesso;
+
+          &:hover {
+            background-color: darken($cor-sucesso, 10%);
+          }
+        }
+
+        &:nth-of-type(2) {
+          background-color: #ffc107;
+
+          &:hover {
+            background-color: darken(#ffc107, 10%);
+          }
+        }
+
+        &:nth-of-type(3) {
+          background-color: $cor-perigo;
+
+          &:hover {
+            background-color: darken($cor-perigo, 10%);
+          }
+        }
       }
     }
   }
 }
 
-//estilização da TAbela
-
 .lista-vagas {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
+  max-width: 1000px;
+  margin: 3rem auto;
   background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  overflow-x: auto;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 
   .table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 1.5rem;
-    font-size: 0.8rem;
-  }
 
-  td,
-  th {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #aaa;
-    vertical-align: middle;
-  }
-
-  thead {
-    background-color: #999;
+    th,
+    td {
+      padding: 0.75rem;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+      font-size: 0.95rem;
+    }
 
     th {
-      color: #444;
-      font-weight: bold;
+      background-color: $cor-primaria;
+      color: #fff;
+      font-weight: 600;
     }
-  }
 
-  tbody {
-    tr {
+    .vaga-row:hover {
+      background-color: #f1f1f1;
+    }
+
+    img {
+      border-radius: 6px;
+      object-fit: cover;
+      width: 60px;
+      height: 60px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-listar {
+      background-color: $cor-primaria;
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 0.5rem;
+      font-weight: 500;
+
       &:hover {
-        background-color: lighten($color: #999, $amount: 5%);
+        background-color: darken($cor-primaria, 10%);
       }
     }
-  }
 
-  btn-listar {
-    border: none;
-    background-color: $cor-secundaria;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
+    .btn-excluir {
+      background-color: $cor-perigo;
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 500;
 
-    &:hover {
-      background-color: darken($color: #ffff00, $amount: 10%);
-    }
-  }
-
-  btn-excluir {
-    border: none;
-    background-color: $cor-secundaria;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
-
-    &:hover {
-      background-color: darken($color: $cor-perigo, $amount: 10%);
+      &:hover {
+        background-color: darken($cor-perigo, 10%);
+      }
     }
   }
 }
 
 .rodape {
-  height: 10vh;
+  height: 100px;
 }

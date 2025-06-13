@@ -80,12 +80,17 @@
     <div class="campo-formulario mb-3">
       <label>Foto</label>
       <input type="file" class="entrada-arquivo" (change)="onFileChange($event)" />
+
+      <div *ngIf="imagemPreview" class="preview-imagem mt-2">
+        <label>Pré-visualização:</label><br />
+        <img [src]="imagemPreview" alt="Pré-visualização da foto" style="max-width: 150px; border-radius: 8px;" />
+      </div>
     </div>
 
     <div class="botoes-formulario d-flex gap-2">
       <button class="btn-cadastrar" (click)="cadastrar()">Cadastrar</button>
-      <button class="btn-atualizar" (click)="atualizar(curriculo.id)">Atualizar</button>
-      <button class="btn-excluir" (click)="excluir(curriculo.id)">Excluir</button>
+      <button class="btn-atualizar" (click)="atualizar(curriculo.id!)">Atualizar</button>
+      <button class="btn-excluir" (click)="excluir(curriculo.id!)">Excluir</button>
     </div>
   </div>
   <section class="curriculo-list">
@@ -97,6 +102,7 @@
           <th>Email</th>
           <th>Telefone</th>
           <th>Foto</th>
+          <th>Ações</th>
         </tr>
       </thead>
   <tbody>
@@ -106,18 +112,14 @@
       <td>{{ curriculo.email }}</td>
       <td>{{ curriculo.telefone }}</td>
       <td>
-        <img src="assets/img/curriculos/{{ curriculo.foto }}" alt="Foto do candidato" class="foto-candidato" />
-      </td>
-      <td>
-        <button type="button" (click)="listarCurriculo()" class="btn-listar">
-          Listar
-        </button>
-
-        <button type="button" (click)="excluir(curriculo.id)" class="btn-excluir">
-          Excluir
-        </button>
-      </td>
-    </tr>
-  </tbody>
+        <img [src]="'assets/img/curriculos/' + curriculo.foto" alt="Foto" width="60" height="60" style="object-fit: cover;" />
+          </td>
+          <td>
+            <button (click)="listarCurriculoUnico(curriculo)" class="btn-listar">Editar</button>
+            <button (click)="excluir(curriculo.id!)" class="btn-excluir">Excluir</button>
+          </td>
+        </tr>
+      </tbody>
     </table>
+  </section>
 </section>

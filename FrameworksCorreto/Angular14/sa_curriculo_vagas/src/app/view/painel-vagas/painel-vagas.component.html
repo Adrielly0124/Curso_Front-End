@@ -1,27 +1,30 @@
 <section class="formulario-curriculo">
   <div class="cartao-curriculo p-3">
-  
-<form>
-  <h3 class="titulo-formulario mb-3">Cadastrar Vaga</h3>
-  <label>Id</label>
-  <input type="text" name="id" [(ngModel)]="vaga.id" /><br />
 
-  <label>Nome</label>
-  <input type="text" name="nome" [(ngModel)]="vaga.nome" /><br />
+    <form>
+      <label>Nome</label>
+      <input type="text" name="nome" [(ngModel)]="vaga.nome" /><br />
 
-  <label>Foto</label>
-  <input type="file" name="foto" [(ngModel)]="vaga.foto" /><br />
+      <div class="campo-formulario mb-3">
+        <label>Foto</label>
+        <input type="file" class="entrada-arquivo" (change)="onFileChange($event)" />
 
-  <label>Descrição</label>
-  <input type="text" name="descricao" [(ngModel)]="vaga.descricao" /><br />
+        <div *ngIf="imagemPreview" class="preview-imagem mt-2">
+          <label>Pré-visualização:</label><br />
+          <img [src]="imagemPreview" alt="Pré-visualização da foto" style="max-width: 150px; border-radius: 8px;" />
+        </div>
+      </div>
 
-  <label>Salário</label>
-  <input type="text" name="salario" [(ngModel)]="vaga.salario" /><br />
+      <label>Descrição</label>
+      <input type="text" name="descricao" [(ngModel)]="vaga.descricao" /><br />
 
-  <button type="button" (click)="cadastrar()">Cadastrar Vaga</button>
-  <button type="button" (click)="atualizar(vaga.id)">Atualizar Vaga</button>
-  <button type="button" (click)="excluir(vaga.id)">Excluir Vaga</button>
-</form>
+      <label>Salário</label>
+      <input type="text" name="salario" [(ngModel)]="vaga.salario" /><br />
+
+      <button type="button" (click)="cadastrar()">Cadastrar Vaga</button>
+      <button type="button" (click)="atualizar(vaga.id!)">Atualizar Vaga</button>
+      <button type="button" (click)="excluir(vaga.id!)">Excluir Vaga</button>
+    </form>
 
 <section class="lista-vagas">
   <table class="table">
@@ -31,21 +34,26 @@
         <th>Vaga</th>
         <th>Descrição da Vaga</th>
         <th>Salário</th>
+        <th>Foto</th>
         <th>Ações</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let vaga of vagas" class="vaga-row">
-        <td>{{ vaga.id }}</td>
+        <td>{{ vaga.id! }}</td>
         <td>{{ vaga.nome }}</td>
         <td>{{ vaga.descricao }}</td>
         <td>R$ {{ vaga.salario }},00</td>
         <td>
+          <img [src]="'assets/img/vagas/' + vaga.foto" alt="Foto" width="60" height="60" style="object-fit: cover;" />
+            </td>
+            <td>
+        <td>
           <button type="button" (click)="listarVagaUnica(vaga)" class="btn-listar">
-            Listar
+            Editar
           </button>
 
-          <button type="button" (click)="excluir(vaga.id)" class="btn-excluir">
+          <button type="button" (click)="excluir(vaga.id!)" class="btn-excluir">
             Excluir
           </button>
         </td>

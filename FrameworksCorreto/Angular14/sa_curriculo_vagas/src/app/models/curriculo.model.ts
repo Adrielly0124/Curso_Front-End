@@ -1,6 +1,5 @@
 export class Curriculo {
   constructor(
-    public id: number,
     public nome: string,
     public email: string,
     public telefone: string,
@@ -16,12 +15,12 @@ export class Curriculo {
     public objetivo: string,
     public habilidades: string,
     public disponibilidade: boolean,
-    public experiencia: string
+    public experiencia: string,
+    public id?: number
   ) {}
 
   static fromMap(data: any): Curriculo {
     return new Curriculo(
-      data.id,
       data.nome,
       data.email,
       data.telefone,
@@ -37,7 +36,8 @@ export class Curriculo {
       data.objetivo,
       data.habilidades,
       data.disponibilidade,
-      data.experiencia
+      data.experiencia,
+      data.id
     );
   }
 }

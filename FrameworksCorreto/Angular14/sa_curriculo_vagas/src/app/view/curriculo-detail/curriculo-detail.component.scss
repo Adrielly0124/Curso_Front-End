@@ -1,0 +1,55 @@
+$cor-primaria: #007bff;
+$cor-secundaria: #6c757d;
+$cor-sucesso: #28a745;
+$cor-alerta: #ffc107;
+$cor-perigo: #dc3545;
+$cor-fundo: #f0f2f5;
+$cinza-leve: #e9ecef;
+
+.curriculo-detalhes {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+
+    img {
+      max-width: 180px;
+      border-radius: 50%;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-body {
+      width: 100%;
+      text-align: left;
+
+      h2 {
+        font-size: 1.75rem;
+        color: $cor-primaria;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      p {
+        font-size: 1rem;
+        margin: 0.5rem 0;
+        color: #333;
+
+        strong {
+          color: $cor-secundaria;
+        }
+      }
+    }
+  }
+}

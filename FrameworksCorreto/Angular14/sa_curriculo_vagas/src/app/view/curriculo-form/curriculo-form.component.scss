@@ -1,102 +1,129 @@
-// Variáveis reutilizadas
+// Paleta de cores refinada
 $cor-primaria: #007bff;
 $cor-secundaria: #6c757d;
 $cor-sucesso: #28a745;
+$cor-alerta: #ffc107;
 $cor-perigo: #dc3545;
+$cor-fundo: #f0f2f5;
+$cinza-leve: #e9ecef;
 
+// Estilo geral do formulário
 .formulario-curriculo {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
 
   .cartao-curriculo {
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    padding: 1.5rem;
+    background-color: $cor-fundo;
+    border-radius: 10px;
+    padding: 2rem;
   }
 
   .titulo-formulario {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: $cor-secundaria;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $cor-primaria;
     text-align: center;
     margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
 
   .campo-formulario {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
 
     label {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
       color: #333;
-      font-weight: 500;
+      font-weight: 600;
+      font-size: 1rem;
     }
 
     .entrada-texto,
     .entrada-textarea,
     .entrada-arquivo {
-      padding: 0.75rem;
+      padding: 0.75rem 1rem;
       font-size: 1rem;
-      border: 1px solid #ccc;
+      border: 1px solid #ced4da;
       border-radius: 6px;
+      background-color: #fff;
+      transition: 0.3s ease;
 
       &:focus {
         border-color: $cor-primaria;
         outline: none;
-        box-shadow: 0 0 5px rgba($cor-primaria, 0.3);
+        box-shadow: 0 0 0 3px rgba($cor-primaria, 0.15);
       }
     }
 
     .entrada-textarea {
       resize: vertical;
-      min-height: 80px;
+      min-height: 100px;
+    }
+  }
+
+  .preview-imagem {
+    margin-top: 0.75rem;
+
+    img {
+      border: 2px solid $cinza-leve;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
   }
 
   .botoes-formulario {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 1rem;
+    margin-top: 2rem;
 
     .btn-cadastrar,
     .btn-atualizar,
     .btn-excluir {
-      padding: 0.75rem 1.5rem;
+      flex: 1;
+      padding: 0.75rem 1rem;
       font-size: 1rem;
+      font-weight: 600;
       border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      color: white;
+      border-radius: 6px;
+      color: #fff;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.02);
+      }
     }
 
     .btn-cadastrar {
-      background-color: $cor-secundaria;
+      background-color: $cor-sucesso;
 
       &:hover {
-        background-color: darken($cor-sucesso, 10%);
+        background-color: darken($cor-sucesso, 8%);
       }
     }
 
     .btn-atualizar {
-      background-color: $cor-secundaria;
+      background-color: $cor-alerta;
+      color: #000;
 
       &:hover {
-        background-color: darken(#ffff00, 10%);
+        background-color: darken($cor-alerta, 8%);
       }
     }
 
     .btn-excluir {
-      background-color: $cor-secundaria;
+      background-color: $cor-perigo;
 
       &:hover {
-        background-color: darken($cor-perigo, 10%);
+        background-color: darken($cor-perigo, 8%);
       }
     }
   }

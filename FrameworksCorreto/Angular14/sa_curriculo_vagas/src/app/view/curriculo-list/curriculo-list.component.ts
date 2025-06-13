@@ -18,8 +18,9 @@ export class CurriculoListComponent implements OnInit {
   }
 
   listarCurriculos() {
-    this._curriculoService.getCurriculos(1).subscribe((retornoCurriculo) => {
-      this.curriculos = retornoCurriculo;
+    this._curriculoService.listarCurriculo().subscribe((retorno) => {
+      this.curriculos = retorno.filter((c) => c.id !== 0);
     });
   }
 }
+

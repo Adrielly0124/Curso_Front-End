@@ -7,9 +7,7 @@ import { Curriculo } from '../models/curriculo.model';
   providedIn: 'root',
 })
 export class CurriculoService {
-  excluirCurriculo(id: number): Observable<any> {
-    return this.http.delete<any>(`/api/curriculos/${id}`);
-  }
+  
 
   listarCurriculo(): Observable<Curriculo[]> {
     return this.http.get<Curriculo[]>(this.apiUrl);
