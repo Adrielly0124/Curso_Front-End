@@ -66,7 +66,4 @@ export class AuthService {
   }
 }
 
-@Injectable({ providedIn: 'root' })
 
-export class AuthGuard implements CanActivate {
-}
