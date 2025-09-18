@@ -80,7 +80,16 @@ export default function Home(){
   }
 
   //deletarTarefa
-
+  const deletarTarefa = async(id:string)=>{
+    try {
+      await fetch(`api/tarefas/${id}`,{
+        method:"DELETE",
+      })
+      buscarTarefas();
+    } catch (error) {
+      console.error(error)
+    }
+  }
   //Interface do Usuário ReactDom
   return(
     <div>
@@ -99,6 +108,7 @@ export default function Home(){
             checked={tarefa.concluida}
             onChange={()=>atualizarTarefa(tarefa._id.toString(), tarefa.concluida)}/>
             {tarefa.titulo}
+             <button onClick={()=>deletarTarefa(tarefa._id)}>Deletar</button>
           </li>
         ))}
       </ul>
