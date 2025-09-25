@@ -37,6 +37,7 @@ O projeto consiste no desenvolvimento de um Sistema de Gestão de Manutenção (
 
 1. ### Diagrama de classe 
 Descreve o Comportamento das Entidades de um Projeto (Aquelas informações que serão armazenadas no banco de dados)
+
     - Usuário (User)
         - Atributos: id, nome, email, senha, função
         - Métodos: create, read, update, delete, login, logout 
