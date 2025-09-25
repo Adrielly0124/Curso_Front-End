@@ -41,6 +41,7 @@ Descreve o Comportamento das Entidades de um Projeto (Aquelas informações que 
     - Usuário (User)
         - Atributos: id, nome, email, senha, função
         - Métodos: create, read, update, delete, login, logout 
+
     - Equipamento (Equipment)
         - Atributos: id, modelo, marca, localiza, status, numero/Série
         - Métodos: CRUD
@@ -87,5 +88,48 @@ classDiagram
     Usuario "1"--"1+" OrdemServico: "o usuário é responsável por uma ou mais ordens de serviços"
     Equipamento "1"--"1+" OrdemServico: " um equipamento é associado a um ou mais ordens de serviços"
 
-
 ```
+
+2. ### Caso de Uso
+Ilustra as interações dos diferentes tipos de usuários (Atores) com as funcionalidades do sistema
+
+    - Técnico: Gerenciar Ordens de Serviço (CRUD) e acessar o dashboard;
+    - Gerente: Funções do técnico + Gerenciamento de Equipamentos (CRUD);
+    - Admin: Gerenciar os Usuários do Sistema e acessar o Dshboard
+
+    Fazer o login -> Antes de qualquer ação
+
+    ```mermaid
+    graph TD
+
+        subgraph "SGM"
+            caso1([Fazer login])
+            caso2([Gerenciar Ordens de Serviço - CRUD])
+            caso3([Gerenciar Equipamentos])
+            caso4 ([Gerenciar Usuários])
+            caso5([Acessar o Dashboard])
+        end
+
+        Tecnico([Técnico de Manutenção])
+        Gerente([Gerente de Manutenção])
+        Admin([Administrador do Sistema])
+
+        Tecnico --> caso1
+        Tecnico --> caso3
+        Tecnico --> caso5
+
+        Gerente --> caso1
+        Gerente --> caso2
+        Gerente --> caso3
+        Gerente --> caso5
+
+        Admin --> caso1
+        Admin --> caso4
+        Admin --> caso5
+
+        caso1 -,-> caso2
+        caso1 -,-> caso3
+        caso1 -,-> caso4
+        caso1 -,-> caso5
+
+    ```
