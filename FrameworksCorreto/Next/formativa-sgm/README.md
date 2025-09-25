@@ -99,40 +99,41 @@ Ilustra as interações dos diferentes tipos de usuários (Atores) com as funcio
 
     Fazer o login -> Antes de qualquer ação
 
-    ```mermaid
-    graph TD
+```mermaid
 
-        subgraph "SGM"
-            caso1([Fazer login])
-            caso2([Gerenciar Ordens de Serviço - CRUD])
-            caso3([Gerenciar Equipamentos])
-            caso4 ([Gerenciar Usuários])
-            caso5([Acessar o Dashboard])
-        end
+graph TD
 
-        Tecnico([Técnico de Manutenção])
-        Gerente([Gerente de Manutenção])
-        Admin([Administrador do Sistema])
+    subgraph "SGM"
+        caso1([Fazer login])
+        caso2([Gerenciar Ordens de Serviço - CRUD])
+        caso3([Gerenciar Equipamentos])
+        caso4 ([Gerenciar Usuários])
+        caso5([Acessar o Dashboard])
+    end
 
-        Tecnico --> caso1
-        Tecnico --> caso3
-        Tecnico --> caso5
+    Tecnico([Técnico de Manutenção])
+    Gerente([Gerente de Manutenção])
+    Admin([Administrador do Sistema])
 
-        Gerente --> caso1
-        Gerente --> caso2
-        Gerente --> caso3
-        Gerente --> caso5
+    Tecnico --> caso1
+    Tecnico --> caso3
+    Tecnico --> caso5
 
-        Admin --> caso1
-        Admin --> caso4
-        Admin --> caso5
+    Gerente --> caso1
+    Gerente --> caso2
+    Gerente --> caso3
+    Gerente --> caso5
 
-        caso1 -,-> caso2
-        caso1 -,-> caso3
-        caso1 -,-> caso4
-        caso1 -,-> caso5
+    Admin --> caso1
+    Admin --> caso4
+    Admin --> caso5
 
-    ```
+    caso1 -,-> caso2
+    caso1 -,-> caso3
+    caso1 -,-> caso4
+    caso1 -,-> caso5
+
+```
 
 3. ### Fluxo
 Detalha o passo a passo para realizar uma ação no sistema
