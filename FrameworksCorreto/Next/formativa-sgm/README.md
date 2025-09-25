@@ -107,7 +107,7 @@ graph TD
         caso1([Fazer login])
         caso2([Gerenciar Ordens de Serviço - CRUD])
         caso3([Gerenciar Equipamentos])
-        caso4 ([Gerenciar Usuários])
+        caso4([Gerenciar Usuários])
         caso5([Acessar o Dashboard])
     end
 
