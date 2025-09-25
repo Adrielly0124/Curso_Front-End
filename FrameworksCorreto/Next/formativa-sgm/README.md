@@ -133,3 +133,25 @@ Ilustra as interações dos diferentes tipos de usuários (Atores) com as funcio
         caso1 -,-> caso5
 
     ```
+
+3. ### Fluxo
+Detalha o passo a passo para realizar uma ação no sistema
+
+- Diagrama de Fluxo de login
+    - O usuário acessa a tela de login
+    - Insere as credenciais
+    - O sistema verifica as Credenciais 
+        - se sim: gera um JWT (Token) => Dashboard
+        - se não: manda uma mensagem de erro - Permanece na tela de Login
+
+````mermaid
+
+graph TD
+    A[Início] --> B{Acessa a Tela de Login}
+    B --> C[Preencher Email e Senha]
+    C --> D{Validar as Credencias}
+    D --> SIM --> E[Gerar um Token JWT]
+    E --> F[Dashboard]
+    D --> NÃO --> G[Mensagem de Erro]
+    G --> E
+```
