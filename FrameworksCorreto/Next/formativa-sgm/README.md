@@ -128,10 +128,10 @@ graph TD
     Admin --> caso4
     Admin --> caso5
 
-    caso1 -,-> caso2
-    caso1 -,-> caso3
-    caso1 -,-> caso4
-    caso1 -,-> caso5
+    caso1 -.-> caso2
+    caso1 -.-> caso3
+    caso1 -.-> caso4
+    caso1 -.-> caso5
 
 ```
 
