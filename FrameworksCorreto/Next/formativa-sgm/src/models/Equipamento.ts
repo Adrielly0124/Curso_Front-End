@@ -14,7 +14,7 @@ const EquipamentoSchema: Schema<IEquipamento> = new Schema({
   marca: { type: String, required: true },
   localizacao: { type: String, required: true },
   status: { type: String, required: true, 
-    enum: ["Ativo", "Inativo"], 
+    enum: ["Ativo", "Inativo", "Manutencao"], 
     default: "Em Operacao" },
   numSerie: { type: String, required: true, unique: true }
 });

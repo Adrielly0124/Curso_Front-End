@@ -12,7 +12,7 @@ export interface IUsuario extends Document{
 }
 
 
-
+//Schema -> construtor 
 const UsuarioSchema:Schema<IUsuario> = new Schema({
     nome: {type: String, required: true},
     email: {type: String, required: true, unique:true},
@@ -40,6 +40,12 @@ UsuarioSchema.pre<IUsuario>('save', async function (next){
 })
 
 //método para comparar senhas
+//quando faz o login (compara a senha digitada e criptografada com a senha criptografada do banco)
+UsuarioSchema.methods.compareSenha = function (senhaUsuario:string):
+Promise<boolean>{
+    return bcrypt.compare(senhaUsuario,this.senha);
+}
+
 
 //toMap // FromMap
 const Usuario: Model<IUsuario> = mongoose.models.User 
