@@ -1,18 +1,22 @@
-# Sistema de Gestão de Manutenção (SGM)
+# Gerenciador de Tarefas para Times (Estilo Kanban) - Formativa
 
 ## Briefing
-O projeto consiste no desenvolvimento de um Sistema de Gestão de Manutenção (SGM) no formato de uma aplicação web. O objetivo é centralizar e otimizar o controle das atividades de manutenção de máquinas e equipamentos de uma empresa. A plataforma permitirá o cadastro de equipamentos, agendamento de manutenções preventivas e corretivas, e o gerenciamento de ordens de serviço.
+O projeto consiste no desenvolvimento de um Gerenciador de Tarefas no formato de uma aplicação web. O objetivo é organizar e centralizar o fluxo de trabalho de equipes, fornecendo uma visão clara das tarefas que precisam ser feitas, das que estão em andamento e das já concluídas, através de um quadro Kanban.
 
 ## Objetivos do Projeto
-- Gerenciar informações sobre equipamentos e manutenção realizadas pela empresa
-- Realizar abertura de chamados de manutenção (ordens de serviço)
-- dashboard de históricos de manutenção
-- Proteger acesso aos dados do sistema (criptografia e autenticação segura de usuários)
+ - Gerenciar projetos e tarefas de forma centralizada.
+
+ - Permitir o CRUD de projetos.
+
+ - Permitir o CRUD de tarefas (título, descrição, projeto associado, membro atribuído, status).
+
+ - Visualizar tarefas em um quadro Kanban.
+
+ - (Bônus) Implementar drag-and-drop para movimentação de tarefas entre colunas.
 
 ## Público-Alvo
-- Técnicos de Manutenção (usuários finais)
-- Gestores de Manutenção (usuários intermediários)
-- Administradores do Sistema (Gerenciar a permissão dos usuários)
+- Gerente de Projeto.
+- Membro da Equipe.
 
 ## Levantamento de Requisitos do Projeto
 - ### Requisitos Funcionais
@@ -93,9 +97,9 @@ Descreve o Comportamento das Entidades de um Projeto (Aquelas informações que 
 
     - Usuário (User)
         - Atributos: id, nome, email, senha, função
-        - Métodos: create, read, update, delete, login, logout 
+        - Métodos: CRUD, login, logout
 
-    - Equipamento (Equipment)
+    - Projeto
         - Atributos: id, modelo, marca, localiza, status, numero/Série
         - Métodos: CRUD
 
