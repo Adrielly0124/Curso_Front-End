@@ -208,8 +208,8 @@ Detalha o passo a passo para realizar uma ação no sistema
 
 graph TD
     %% Início do sistema
-    A[Início] --> B{Login}
-    B --> C{Usuário é Gerente de Projeto?}
+    A[Inicio] --> B{Login}
+    B --> C{Usuario e Gerente de Projeto?}
     
     %% Fluxo do Gerente de Projeto
     C -- Sim --> D[Acessar Dashboard do Projeto]
@@ -218,29 +218,29 @@ graph TD
     F -- Criar --> G[Cadastrar Projeto]
     F -- Editar --> H[Editar Projeto]
     F -- Excluir --> I[Excluir Projeto]
-    F -- Não --> J[Selecionar Projeto Existente]
+    F -- Nao --> J[Selecionar Projeto Existente]
 
     J --> K[Gerenciar Tarefas do Projeto]
     K --> L{Criar/Editar/Excluir Tarefa?}
     L -- Criar --> M[Cadastrar Nova Tarefa]
     L -- Editar --> N[Editar Tarefa]
     L -- Excluir --> O[Excluir Tarefa]
-    L -- Não --> P[Atribuir Tarefa a Membro]
+    L -- Nao --> P[Atribuir Tarefa a Membro]
 
     P --> Q[Notificar Membro da Tarefa]
     Q --> R[Fim do Fluxo Gerente]
 
     %% Fluxo do Membro da Equipe
-    C -- Não --> S[Acessar Dashboard do Membro]
-    S --> T[Visualizar Tarefas Atribuídas]
+    C -- Nao --> S[Acessar Dashboard do Membro]
+    S --> T[Visualizar Tarefas Atribuidas]
     T --> U{Mover Tarefa entre Status?}
     U -- Sim --> V[Selecionar Tarefa]
     V --> W{Atualizar Status}
     W -- A Fazer --> X[Tarefa em A Fazer]
-    W -- Em Progresso --> Y[Tarefa em Em Progresso]
-    W -- Concluído --> Z[Tarefa em Concluído]
+    W -- Em Progresso --> Y[Tarefa em Progresso]
+    W -- Concluido --> Z[Tarefa em Concluido]
     W --> T  %% Permite atualizar outras tarefas
-    U -- Não --> AA[Fim do Fluxo Membro]
+    U -- Nao --> AA[Fim do Fluxo Membro]
 
     %% Conexão final
     X --> AA
