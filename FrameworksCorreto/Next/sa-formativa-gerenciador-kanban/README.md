@@ -51,15 +51,19 @@ O projeto consiste no desenvolvimento de um Gerenciador de Tarefas no formato de
 
 ## Recursos do Projeto
 - ### Tecnológicos 
-    - Framework de Desenvolvimento Next/ React
+    - Framework de Desenvolvimento Next/ React (App Router)
     - Linguagem de Programação: TypeScript
-    - Banco de Dados: Não Relacional (MongoDB)
+    - Banco de Dados: Não Relacional (MongoDB = Mongoose)
+    - JWT Authentication
+    - SCSS
+    - Drag & Drop com @dnd-kit/core
     - GitHub
     - VsCode
-    Figma
+    - Figma
 
-- ### Pessoal
-    - Dev Tudo
+## Startar o projeto
+ - npm install
+ - npm run dev
 
 ## Análise de Risco
 
