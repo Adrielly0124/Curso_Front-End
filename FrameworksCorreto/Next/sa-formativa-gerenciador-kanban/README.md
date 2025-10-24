@@ -204,7 +204,7 @@ Detalha o passo a passo para realizar uma ação no sistema
  - Visualiza tarefas atribuídas no dashboard.
  - Move tarefas entre os status: A Fazer → Em Progresso → Concluído.
 
-````mermaid
+```mermaid
 
 graph TD
     %% Início do sistema
