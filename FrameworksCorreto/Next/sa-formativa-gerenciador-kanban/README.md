@@ -236,7 +236,7 @@ graph TD
     T --> U{Mover Tarefa entre Status?}
     U -- Sim --> V[Selecionar Tarefa]
     V --> W{Atualizar Status}
-    W -- A Fazer --> X[Tarefa em "A Fazer"]
+    W -- A Fazer --> X[Tarefa em (A Fazer)]
     W -- Em Progresso --> Y[Tarefa em "Em Progresso"]
     W -- Concluído --> Z[Tarefa em "Concluído"]
     W --> T  %% Permite atualizar outras tarefas
