@@ -239,7 +239,8 @@ graph TD
     W -- A Fazer --> X[Tarefa em A Fazer]
     W -- Em Progresso --> Y[Tarefa em Progresso]
     W -- Concluido --> Z[Tarefa em Concluido]
-    W --> T  %% Permite atualizar outras tarefas
+    %% Permite atualizar outras tarefas
+    W --> T 
     U -- Nao --> AA[Fim do Fluxo Membro]
 
     %% Conexão final
